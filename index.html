@@ -1,0 +1,1802 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>沖縄北部 2泊3日 — JUNGLIA & やんばるリゾート設計</title>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700;800&family=Zen+Maru+Gothic:wght@300;400;500;700&family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ocean-deep: #0a3d62;
+  --ocean-mid: #1a6b8a;
+  --ocean-light: #4db8c7;
+  --coral: #e8734a;
+  --coral-soft: #f4a77a;
+  --sand: #f5ead6;
+  --sand-light: #faf6ee;
+  --tropical-green: #2d6a4f;
+  --tropical-light: #74c69d;
+  --sunset-pink: #f2a3b3;
+  --white: #ffffff;
+  --text-dark: #1a1a2e;
+  --text-body: #3a3a4a;
+  --text-light: #6b6b7b;
+  --bg: #faf8f4;
+  --section-alt: #f0ece4;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ocean-deep: #c7e8f3;
+    --ocean-mid: #6dc8d8;
+    --ocean-light: #3a9aad;
+    --coral: #f4a77a;
+    --coral-soft: #e8734a;
+    --sand: #2a2520;
+    --sand-light: #1e1c18;
+    --tropical-green: #74c69d;
+    --tropical-light: #2d6a4f;
+    --sunset-pink: #d4708a;
+    --white: #1a1a1a;
+    --text-dark: #f0ece4;
+    --text-body: #d0cec6;
+    --text-light: #9a9a8a;
+    --bg: #111110;
+    --section-alt: #1a1918;
+  }
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Zen Maru Gothic', sans-serif;
+  background: var(--bg);
+  color: var(--text-body);
+  line-height: 1.9;
+  font-weight: 400;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--coral);
+  color: white;
+}
+
+/* ===== HERO ===== */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+  background: linear-gradient(
+    175deg,
+    #064273 0%,
+    #0a6e8a 25%,
+    #14a3c7 45%,
+    #5cc8d4 60%,
+    #8ce0e0 70%,
+    #b8f0e8 80%,
+    var(--sand) 95%
+  );
+}
+
+@media (prefers-color-scheme: dark) {
+  .hero {
+    background: linear-gradient(
+      175deg,
+      #021a2e 0%,
+      #043a52 25%,
+      #085a72 45%,
+      #0a7a8a 60%,
+      #0c8a8a 70%,
+      #1a4a4a 80%,
+      var(--bg) 95%
+    );
+  }
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 200px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 200'%3E%3Cpath fill='%23faf8f4' d='M0,96L48,90.7C96,85,192,75,288,80C384,85,480,107,576,112C672,117,768,107,864,90.7C960,75,1056,53,1152,53.3C1248,53,1344,75,1392,85.3L1440,96L1440,200L1392,200C1344,200,1248,200,1152,200C1056,200,960,200,864,200C768,200,672,200,576,200C480,200,384,200,288,200C192,200,96,200,48,200L0,200Z'/%3E%3C/svg%3E") no-repeat bottom center;
+  background-size: cover;
+  z-index: 2;
+}
+
+@media (prefers-color-scheme: dark) {
+  .hero::before {
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 200'%3E%3Cpath fill='%23111110' d='M0,96L48,90.7C96,85,192,75,288,80C384,85,480,107,576,112C672,117,768,107,864,90.7C960,75,1056,53,1152,53.3C1248,53,1344,75,1392,85.3L1440,96L1440,200L1392,200C1344,200,1248,200,1152,200C1056,200,960,200,864,200C768,200,672,200,576,200C480,200,384,200,288,200C192,200,96,200,48,200L0,200Z'/%3E%3C/svg%3E") no-repeat bottom center;
+    background-size: cover;
+  }
+}
+
+/* Floating elements */
+.hero-float {
+  position: absolute;
+  font-size: 3rem;
+  opacity: 0.15;
+  animation: float 8s ease-in-out infinite;
+  pointer-events: none;
+}
+.hero-float:nth-child(1) { top: 10%; left: 8%; animation-delay: 0s; font-size: 4rem; }
+.hero-float:nth-child(2) { top: 20%; right: 12%; animation-delay: 2s; font-size: 2.5rem; }
+.hero-float:nth-child(3) { bottom: 30%; left: 15%; animation-delay: 4s; font-size: 3.5rem; }
+.hero-float:nth-child(4) { top: 45%; right: 8%; animation-delay: 1s; font-size: 2rem; }
+.hero-float:nth-child(5) { bottom: 35%; right: 20%; animation-delay: 3s; font-size: 2.8rem; }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  33% { transform: translateY(-20px) rotate(5deg); }
+  66% { transform: translateY(10px) rotate(-3deg); }
+}
+
+.hero-content {
+  position: relative;
+  z-index: 3;
+  padding: 0 2rem;
+}
+
+.hero-tag {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 1.5rem;
+  animation: fadeUp 1s ease 0.2s both;
+}
+
+.hero-title {
+  font-family: 'Shippori Mincho', serif;
+  font-size: clamp(2.2rem, 6vw, 4.5rem);
+  font-weight: 700;
+  color: white;
+  line-height: 1.3;
+  margin-bottom: 1rem;
+  animation: fadeUp 1s ease 0.4s both;
+  text-shadow: 0 4px 30px rgba(0,0,0,0.15);
+}
+
+.hero-title .accent {
+  color: #ffd700;
+  display: block;
+  font-size: 0.6em;
+  font-weight: 500;
+  margin-top: 0.3em;
+}
+
+.hero-sub {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.8);
+  max-width: 520px;
+  margin: 0 auto 2.5rem;
+  animation: fadeUp 1s ease 0.6s both;
+  line-height: 1.8;
+}
+
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.9rem 2.2rem;
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 50px;
+  color: white;
+  text-decoration: none;
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+  transition: all 0.4s;
+  animation: fadeUp 1s ease 0.8s both;
+}
+.hero-cta:hover {
+  background: rgba(255,255,255,0.25);
+  transform: translateY(-2px);
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== NAV ===== */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--bg);
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  backdrop-filter: blur(20px);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+@media (prefers-color-scheme: dark) {
+  .nav { border-bottom: 1px solid rgba(255,255,255,0.08); }
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  padding: 0 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  white-space: nowrap;
+}
+
+.nav a {
+  display: block;
+  padding: 1rem 1.2rem;
+  font-size: 0.78rem;
+  color: var(--text-light);
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  transition: color 0.3s;
+  border-bottom: 2px solid transparent;
+  font-weight: 500;
+}
+
+.nav a:hover {
+  color: var(--coral);
+  border-bottom-color: var(--coral);
+}
+
+/* ===== SECTIONS ===== */
+.section {
+  padding: 5rem 1.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.section-wide {
+  padding: 5rem 1.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.section-full {
+  padding: 5rem 0;
+}
+
+.section-alt-bg {
+  background: var(--section-alt);
+}
+
+/* Section headers */
+.sec-label {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--coral);
+  margin-bottom: 0.8rem;
+}
+
+.sec-title {
+  font-family: 'Shippori Mincho', serif;
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+.sec-title .coral { color: var(--coral); }
+.sec-title .ocean { color: var(--ocean-mid); }
+.sec-title .green { color: var(--tropical-green); }
+
+.sec-desc {
+  font-size: 0.95rem;
+  color: var(--text-light);
+  max-width: 680px;
+  margin-bottom: 3rem;
+  line-height: 1.9;
+}
+
+/* ===== GRAND DESIGN ===== */
+.grand-pillars {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+.pillar {
+  padding: 2rem;
+  border-radius: 16px;
+  background: var(--white);
+  border: 1px solid rgba(0,0,0,0.05);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.pillar:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.06);
+}
+
+.pillar-icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.pillar-title {
+  font-family: 'Shippori Mincho', serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 0.6rem;
+}
+
+.pillar-text {
+  font-size: 0.85rem;
+  color: var(--text-light);
+  line-height: 1.8;
+}
+
+/* ===== PRIVILEGE CARDS ===== */
+.priv-cards {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.priv-card {
+  display: flex;
+  gap: 1.5rem;
+  padding: 2rem;
+  border-radius: 16px;
+  background: linear-gradient(135deg, var(--ocean-deep) 0%, #0e4d72 100%);
+  color: white;
+  align-items: flex-start;
+}
+
+@media (prefers-color-scheme: dark) {
+  .priv-card {
+    background: linear-gradient(135deg, #1a3a4a 0%, #0e2d3a 100%);
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+}
+
+.priv-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3rem;
+  font-weight: 700;
+  opacity: 0.3;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.priv-card-title {
+  font-family: 'Shippori Mincho', serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.priv-card-text {
+  font-size: 0.85rem;
+  opacity: 0.85;
+  line-height: 1.8;
+}
+
+/* ===== WEATHER / CLIMATE ===== */
+.climate-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.climate-card {
+  padding: 2rem;
+  border-radius: 16px;
+  background: var(--white);
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+.climate-card h4 {
+  font-family: 'Shippori Mincho', serif;
+  font-size: 1.05rem;
+  color: var(--text-dark);
+  margin-bottom: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.climate-card p {
+  font-size: 0.85rem;
+  color: var(--text-light);
+  line-height: 1.8;
+}
+
+/* ===== TIMING CARDS ===== */
+.timing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.timing-card {
+  padding: 2rem;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+}
+
+.timing-card.early {
+  background: linear-gradient(135deg, #e8f5e9 0%, #f1f8e9 100%);
+  border: 1px solid #c8e6c9;
+}
+.timing-card.late {
+  background: linear-gradient(135deg, #fff3e0 0%, #fce4ec 100%);
+  border: 1px solid #ffcc80;
+}
+
+@media (prefers-color-scheme: dark) {
+  .timing-card.early {
+    background: linear-gradient(135deg, #1a2e1a 0%, #1e2e18 100%);
+    border: 1px solid #2d4a2d;
+  }
+  .timing-card.late {
+    background: linear-gradient(135deg, #2e2418 0%, #2e1a20 100%);
+    border: 1px solid #4a3020;
+  }
+}
+
+.timing-badge {
+  display: inline-block;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin-bottom: 1rem;
+}
+.timing-card.early .timing-badge { background: var(--tropical-green); color: white; }
+.timing-card.late .timing-badge { background: var(--coral); color: white; }
+
+.timing-card h4 {
+  font-family: 'Shippori Mincho', serif;
+  font-size: 1.1rem;
+  color: var(--text-dark);
+  margin-bottom: 0.8rem;
+}
+
+.timing-card p {
+  font-size: 0.85rem;
+  color: var(--text-body);
+  line-height: 1.8;
+}
+
+/* ===== BUDGET TABLE ===== */
+.budget-wrap {
+  margin-top: 2rem;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(0,0,0,0.08);
+  background: var(--white);
+}
+
+@media (prefers-color-scheme: dark) {
+  .budget-wrap { border: 1px solid rgba(255,255,255,0.08); }
+}
+
+.budget-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+.budget-table thead {
+  background: var(--ocean-deep);
+  color: white;
+}
+
+@media (prefers-color-scheme: dark) {
+  .budget-table thead { background: #1a3a4a; }
+}
+
+.budget-table th {
+  padding: 1rem 1.2rem;
+  text-align: left;
+  font-weight: 500;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+}
+
+.budget-table td {
+  padding: 1rem 1.2rem;
+  border-bottom: 1px solid rgba(0,0,0,0.04);
+  vertical-align: top;
+}
+
+@media (prefers-color-scheme: dark) {
+  .budget-table td { border-bottom: 1px solid rgba(255,255,255,0.04); }
+}
+
+.budget-table tr:last-child td {
+  border-bottom: none;
+  font-weight: 700;
+  background: var(--sand);
+}
+
+.budget-table .amount {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--coral);
+  white-space: nowrap;
+}
+
+/* ===== TRANSPORT ===== */
+.transport-cards {
+  display: grid;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.transport-card {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.5rem 2rem;
+  border-radius: 16px;
+  background: var(--white);
+  border: 1px solid rgba(0,0,0,0.05);
+  transition: transform 0.3s;
+}
+.transport-card:hover { transform: translateX(4px); }
+.transport-card.recommended {
+  border: 2px solid var(--coral);
+  box-shadow: 0 4px 20px rgba(232,115,74,0.1);
+}
+
+.transport-icon { font-size: 2rem; }
+
+.transport-name {
+  font-family: 'Shippori Mincho', serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.transport-detail {
+  font-size: 0.8rem;
+  color: var(--text-light);
+  margin-top: 0.3rem;
+}
+
+.transport-badge {
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.transport-card.recommended .transport-badge {
+  background: var(--coral);
+  color: white;
+}
+
+/* ===== JUNGLIA ===== */
+.junglia-hero {
+  padding: 4rem 1.5rem;
+  text-align: center;
+  background: linear-gradient(135deg, #1a4a2a 0%, #0a3a1a 50%, #2d6a4f 100%);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+@media (prefers-color-scheme: dark) {
+  .junglia-hero {
+    background: linear-gradient(135deg, #0a2a1a 0%, #051a0a 50%, #1a4a2f 100%);
+  }
+}
+
+.junglia-hero::before {
+  content: '🌿🦎🌺🌴🦜';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 8rem;
+  opacity: 0.06;
+  letter-spacing: 2rem;
+  white-space: nowrap;
+}
+
+.junglia-inner {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.junglia-tips {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+  text-align: left;
+}
+
+.junglia-tip {
+  padding: 1.5rem;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+  backdrop-filter: blur(10px);
+}
+
+.junglia-tip h4 {
+  font-family: 'Shippori Mincho', serif;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.junglia-tip p {
+  font-size: 0.82rem;
+  opacity: 0.85;
+  line-height: 1.8;
+}
+
+/* ===== MODEL COURSES ===== */
+.plan-tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.plan-tab {
+  padding: 0.7rem 1.5rem;
+  border-radius: 50px;
+  border: 2px solid rgba(0,0,0,0.1);
+  background: transparent;
+  cursor: pointer;
+  font-family: 'Zen Maru Gothic', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--text-body);
+  transition: all 0.3s;
+}
+.plan-tab:hover { border-color: var(--coral); color: var(--coral); }
+.plan-tab.active {
+  background: var(--coral);
+  border-color: var(--coral);
+  color: white;
+}
+
+@media (prefers-color-scheme: dark) {
+  .plan-tab { border-color: rgba(255,255,255,0.15); }
+}
+
+.plan-content { display: none; }
+.plan-content.active { display: block; }
+
+.plan-header {
+  padding: 2rem;
+  border-radius: 16px;
+  margin-bottom: 2rem;
+}
+
+.plan-a-header { background: linear-gradient(135deg, #fff3e0, #fce4ec); }
+.plan-b-header { background: linear-gradient(135deg, #e8f5e9, #e0f2f1); }
+.plan-c-header { background: linear-gradient(135deg, #f3e5f5, #e8eaf6); }
+
+@media (prefers-color-scheme: dark) {
+  .plan-a-header { background: linear-gradient(135deg, #2e2418, #2e1a20); }
+  .plan-b-header { background: linear-gradient(135deg, #1a2e1a, #1a2e2a); }
+  .plan-c-header { background: linear-gradient(135deg, #2a1a2e, #1a1e2e); }
+}
+
+.plan-name {
+  font-family: 'Shippori Mincho', serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 0.5rem;
+}
+
+.plan-for {
+  font-size: 0.82rem;
+  color: var(--text-light);
+  line-height: 1.8;
+}
+
+/* Day timeline */
+.day-block {
+  margin-bottom: 2.5rem;
+}
+
+.day-label {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--coral);
+  margin-bottom: 0.3rem;
+}
+
+.day-title {
+  font-family: 'Shippori Mincho', serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 1.2rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+
+@media (prefers-color-scheme: dark) {
+  .day-title { border-bottom-color: rgba(255,255,255,0.06); }
+}
+
+.timeline {
+  position: relative;
+  padding-left: 2rem;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--coral), var(--ocean-light));
+  border-radius: 2px;
+}
+
+.tl-item {
+  position: relative;
+  padding-bottom: 1.5rem;
+}
+
+.tl-item::before {
+  content: '';
+  position: absolute;
+  left: -2rem;
+  top: 6px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--coral);
+  border: 3px solid var(--bg);
+  z-index: 1;
+}
+
+.tl-time {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--coral);
+  margin-bottom: 0.2rem;
+}
+
+.tl-name {
+  font-family: 'Shippori Mincho', serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 0.3rem;
+}
+
+.tl-desc {
+  font-size: 0.82rem;
+  color: var(--text-light);
+  line-height: 1.8;
+}
+
+/* ===== WEATHER PROOF ===== */
+.wp-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.wp-card {
+  padding: 2rem;
+  border-radius: 16px;
+  background: var(--white);
+  border: 1px solid rgba(0,0,0,0.05);
+  transition: transform 0.3s;
+}
+.wp-card:hover { transform: translateY(-4px); }
+
+.wp-card-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.wp-card h4 {
+  font-family: 'Shippori Mincho', serif;
+  font-size: 1.05rem;
+  color: var(--text-dark);
+  margin-bottom: 0.6rem;
+}
+
+.wp-card p {
+  font-size: 0.82rem;
+  color: var(--text-light);
+  line-height: 1.8;
+}
+
+/* ===== SPOTS LIST ===== */
+.spot-category {
+  margin-bottom: 3rem;
+}
+
+.spot-cat-title {
+  font-family: 'Shippori Mincho', serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--coral);
+  display: inline-block;
+}
+
+.spot-list {
+  display: grid;
+  gap: 1.2rem;
+}
+
+.spot-item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1.2rem;
+  padding: 1.5rem;
+  border-radius: 12px;
+  background: var(--white);
+  border: 1px solid rgba(0,0,0,0.04);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.spot-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.05);
+}
+
+.spot-stars {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.spot-rating {
+  font-size: 0.7rem;
+  color: var(--coral);
+  letter-spacing: -0.05em;
+}
+
+.spot-name {
+  font-family: 'Shippori Mincho', serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 0.3rem;
+}
+
+.spot-area {
+  font-size: 0.72rem;
+  color: var(--ocean-mid);
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.spot-desc {
+  font-size: 0.82rem;
+  color: var(--text-light);
+  line-height: 1.8;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  padding: 4rem 1.5rem;
+  text-align: center;
+  background: var(--ocean-deep);
+  color: white;
+  position: relative;
+}
+
+@media (prefers-color-scheme: dark) {
+  .footer { background: #0a1a2a; }
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 80'%3E%3Cpath fill='%23faf8f4' d='M0,40L120,35C240,30,480,20,720,25C960,30,1200,50,1320,60L1440,70L1440,0L1320,0C1200,0,960,0,720,0C480,0,240,0,120,0L0,0Z'/%3E%3C/svg%3E") no-repeat top center;
+  background-size: cover;
+}
+
+@media (prefers-color-scheme: dark) {
+  .footer::before {
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 80'%3E%3Cpath fill='%23111110' d='M0,40L120,35C240,30,480,20,720,25C960,30,1200,50,1320,60L1440,70L1440,0L1320,0C1200,0,960,0,720,0C480,0,240,0,120,0L0,0Z'/%3E%3C/svg%3E") no-repeat top center;
+    background-size: cover;
+  }
+}
+
+.footer-text {
+  font-family: 'Shippori Mincho', serif;
+  font-size: 1.2rem;
+  opacity: 0.8;
+  margin-bottom: 0.5rem;
+}
+
+.footer-sub {
+  font-size: 0.75rem;
+  opacity: 0.4;
+}
+
+/* ===== SCROLL ANIMATIONS ===== */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .section, .section-wide { padding: 3rem 1.2rem; }
+  .priv-card { flex-direction: column; gap: 0.8rem; }
+  .transport-card { grid-template-columns: 1fr; gap: 0.8rem; }
+  .budget-table { font-size: 0.75rem; }
+  .budget-table th, .budget-table td { padding: 0.7rem 0.8rem; }
+  .nav a { padding: 0.8rem; font-size: 0.72rem; }
+  .hero-float { display: none; }
+}
+
+/* ===== DIVIDERS ===== */
+.wave-divider {
+  height: 60px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 60'%3E%3Cpath fill='none' stroke='%23e8734a' stroke-width='1.5' opacity='0.2' d='M0,30Q360,0,720,30T1440,30'/%3E%3Cpath fill='none' stroke='%234db8c7' stroke-width='1' opacity='0.15' d='M0,40Q360,15,720,40T1440,40'/%3E%3C/svg%3E") repeat-x center;
+}
+
+/* ===== STRATEGIC NOTE ===== */
+.strat-note {
+  margin-top: 2rem;
+  padding: 1.5rem 2rem;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #fff8e1, #fff3e0);
+  border-left: 4px solid #ffd54f;
+  font-size: 0.85rem;
+  color: var(--text-body);
+  line-height: 1.8;
+}
+
+@media (prefers-color-scheme: dark) {
+  .strat-note {
+    background: linear-gradient(135deg, #2e2a18, #2e2418);
+    border-left-color: #8a7a2a;
+  }
+}
+
+.strat-note strong {
+  color: var(--coral);
+}
+
+/* ===== REFERENCES ===== */
+.ref-toggle {
+  display: inline-block;
+  padding: 0.6rem 1.5rem;
+  border-radius: 50px;
+  border: 1px solid rgba(0,0,0,0.1);
+  background: transparent;
+  cursor: pointer;
+  font-family: 'Zen Maru Gothic', sans-serif;
+  font-size: 0.8rem;
+  color: var(--text-light);
+  margin-top: 2rem;
+  transition: all 0.3s;
+}
+.ref-toggle:hover { border-color: var(--coral); color: var(--coral); }
+
+@media (prefers-color-scheme: dark) {
+  .ref-toggle { border-color: rgba(255,255,255,0.1); }
+}
+
+.ref-list {
+  display: none;
+  margin-top: 1rem;
+  padding: 1.5rem;
+  border-radius: 12px;
+  background: var(--white);
+  font-size: 0.7rem;
+  color: var(--text-light);
+  line-height: 2;
+  max-height: 400px;
+  overflow-y: auto;
+}
+.ref-list.open { display: block; }
+.ref-list a { color: var(--ocean-mid); text-decoration: none; word-break: break-all; }
+.ref-list a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="hero-float">🌺</div>
+  <div class="hero-float">🐠</div>
+  <div class="hero-float">🌴</div>
+  <div class="hero-float">🐚</div>
+  <div class="hero-float">🌊</div>
+  <div class="hero-content">
+    <div class="hero-tag">Okinawa Northern Resort Design 2026</div>
+    <h1 class="hero-title">
+      沖縄北部ツーリズム<br>× ジャングリア沖縄
+      <span class="accent">2泊3日カップル向け 総合滞在設計</span>
+    </h1>
+    <p class="hero-sub">やんばるの絶景・美食・エンターテインメントを凝縮した、移動の無駄を極限まで削ぎ落とした最高密度のリゾート体験</p>
+    <a href="#grand" class="hero-cta">滞在設計を見る ↓</a>
+  </div>
+</section>
+
+<!-- ===== NAV ===== -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#grand">グランドデザイン</a>
+    <a href="#privilege">ホテル特権</a>
+    <a href="#climate">気候・時期</a>
+    <a href="#budget">予算</a>
+    <a href="#mobility">移動手段</a>
+    <a href="#junglia">ジャングリア攻略</a>
+    <a href="#plans">モデルコース</a>
+    <a href="#rain">雨天対策</a>
+    <a href="#spots">厳選スポット</a>
+  </div>
+</nav>
+
+<!-- ===== 1. GRAND DESIGN ===== -->
+<section class="section reveal" id="grand">
+  <div class="sec-label">01 — Grand Design</div>
+  <h2 class="sec-title">滞在の<span class="coral">グランドデザイン</span></h2>
+  <p class="sec-desc">那覇空港から本部町まで約2時間。限られた滞在時間を最大化するために、北部エリア完結型の滞在モデルを構築し、「絶景・美食・エンターテインメント・休息」の質を追求する。</p>
+
+  <div class="grand-pillars">
+    <div class="pillar reveal">
+      <div class="pillar-icon">🏝️</div>
+      <div class="pillar-title">北部完結型ステイ</div>
+      <div class="pillar-text">本部町・今帰仁村・名護市・古宇利島に行動範囲を厳選。南部・中部への往復移動を排除し、カップルの会話と体験の質を最大化する。</div>
+    </div>
+    <div class="pillar reveal">
+      <div class="pillar-icon">✨</div>
+      <div class="pillar-title">4つの体験要素</div>
+      <div class="pillar-text">絶景（古宇利島・備瀬）、美食（アグー豚・隠れ家レストラン）、エンターテインメント（ジャングリア）、休息（温泉・ホテルステイ）を最適配分。</div>
+    </div>
+    <div class="pillar reveal">
+      <div class="pillar-icon">🚌</div>
+      <div class="pillar-title">ハイブリッド移動</div>
+      <div class="pillar-text">レンタカー + ジャングリア直通シャトルバスの組み合わせで、自由度と快適性を両立。パーク訪問日はアルコールも気兼ねなく楽しめる。</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 1.5. HOTEL PRIVILEGE ===== -->
+<section class="section-alt-bg" id="privilege">
+  <div class="section reveal">
+    <div class="sec-label">01.5 — Official Hotel</div>
+    <h2 class="sec-title">オフィシャルホテルの<span class="ocean">戦略的特権</span></h2>
+    <p class="sec-desc">オリオンホテル モトブ リゾート＆スパは、ジャングリア沖縄のオフィシャル・パートナー・ホテル。この特権を最大限に活用することが、成功の絶対条件となる。</p>
+
+    <div class="priv-cards">
+      <div class="priv-card reveal">
+        <div class="priv-num">01</div>
+        <div>
+          <div class="priv-card-title">🎫 入場確約チケット</div>
+          <div class="priv-card-text">2連泊以上の宿泊者は「ジャングリア入場確約1Dayチケット」の購入権利を取得。混雑による入場制限リスクを完全に排除し、確実な入園を担保する。チケットはフロントデスクで受け渡し。</div>
+        </div>
+      </div>
+      <div class="priv-card reveal">
+        <div class="priv-num">02</div>
+        <div>
+          <div class="priv-card-title">👑 専用優先レーン</div>
+          <div class="priv-card-text">2026年3月20日より運用開始の宿泊者限定「優先レーン」。ホテルロビーで専用紙チケットを受領し、パークオープン時の行列をバイパス。VIP然としたストレスフリーの入場を実現。</div>
+        </div>
+      </div>
+      <div class="priv-card reveal">
+        <div class="priv-num">03</div>
+        <div>
+          <div class="priv-card-title">🚐 Junglia Express</div>
+          <div class="priv-card-text">ホテルとジャングリアを結ぶ直通シャトルバス（所要約30分）。事前予約で運転義務から解放され、帰館後のディナーでカップル双方がオリオンビールを心置きなく堪能可能。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wave-divider"></div>
+
+<!-- ===== 2. CLIMATE ===== -->
+<section class="section reveal" id="climate">
+  <div class="sec-label">02 — Climate & Timing</div>
+  <h2 class="sec-title">4月の沖縄<span class="green">環境マップ</span></h2>
+  <p class="sec-desc">「うりずん」と呼ばれる初夏のシーズン。日中は25度超の夏日になることも多く、海開きも済んだ南国リゾートの快適期。</p>
+
+  <div class="climate-grid">
+    <div class="climate-card reveal">
+      <h4>🌡️ 気温と服装</h4>
+      <p>日中は半袖・リゾートワンピースで快適。ただし朝晩の海風で体感温度が急低下するため、薄手の羽織もの（カーディガン・リネンシャツ等）によるレイヤードが必須。</p>
+    </div>
+    <div class="climate-card reveal">
+      <h4>☀️ 紫外線対策</h4>
+      <p>紫外線量が急増する時期。サングラス、帽子、日焼け止めといったUVケア用品の携帯は欠かせない。ビーチでの長時間滞在には特に注意。</p>
+    </div>
+    <div class="climate-card reveal">
+      <h4>🏖️ 海開き状況</h4>
+      <p>2025年の実績では3月下旬〜4月上旬に順次開催。2026年4月上旬には大部分のビーチで遊泳が可能になる見込み。</p>
+    </div>
+    <div class="climate-card reveal">
+      <h4>🌧️ 天候リスク</h4>
+      <p>前線通過に伴う突発的な雨天が想定される。ウェザープルーフ・プランニング（雨天代替案）の事前準備が滞在満足度を担保する鍵。</p>
+    </div>
+  </div>
+
+  <h3 style="font-family:'Shippori Mincho',serif; font-size:1.2rem; color:var(--text-dark); margin-top:3rem; margin-bottom:1rem;">日程選択のダイナミクス</h3>
+
+  <div class="timing-grid">
+    <div class="timing-card early reveal">
+      <div class="timing-badge">RECOMMENDED</div>
+      <h4>🌿 4月上旬〜中旬（4/1–4/24）</h4>
+      <p>気候安定、航空券・宿泊が相対的に安価な「閑散期の最適解」。ジャングリアや周辺カフェも落ち着いており、静かなリゾートステイとプライベートな時間を最優先するカップルに最適。</p>
+    </div>
+    <div class="timing-card late reveal">
+      <div class="timing-badge">ENTERTAINMENT MAX</div>
+      <h4>🎆 4月下旬（4/25〜）</h4>
+      <p>「やんばるトルネード」の開業（4/29）と伊江島ゆり祭り（4/25–5/5）が重なり、エンターテインメント総量が最大化。一方で混雑・予約困難リスクが跳ね上がるため、数ヶ月前からの厳密な手配が不可欠。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== BUDGET ===== -->
+<section class="section-alt-bg" id="budget">
+  <div class="section-wide reveal">
+    <div class="sec-label">02.5 — Budget</div>
+    <h2 class="sec-title">推奨予算<span class="coral">（1人あたり）</span></h2>
+    <p class="sec-desc">極端な節約を避け、ホテルでの優雅な食事や十分なアクティビティを前提とした「満足度重視」の適正価格。</p>
+
+    <div class="budget-wrap">
+      <table class="budget-table">
+        <thead>
+          <tr>
+            <th>項目</th>
+            <th>1人あたり概算</th>
+            <th>備考</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>✈️ 往復航空券</td>
+            <td class="amount">¥30,000〜50,000</td>
+            <td>東京発着想定。4月上旬LCC利用で3万円台、下旬FSC利用で5万円超も</td>
+          </tr>
+          <tr>
+            <td>🏨 宿泊費（2泊）</td>
+            <td class="amount">¥20,000〜50,000</td>
+            <td>オーシャンツイン2万円台〜、クラブウィング（全室スイート）5万円前後</td>
+          </tr>
+          <tr>
+            <td>🚗 レンタカー・交通費</td>
+            <td class="amount">約¥12,000</td>
+            <td>レンタカー代＋ガソリン＋高速料金を2名按分</td>
+          </tr>
+          <tr>
+            <td>🍽️ 飲食・カフェ</td>
+            <td class="amount">¥15,000〜25,000</td>
+            <td>ディナー各日6,000〜8,000円、ランチ・カフェ含む</td>
+          </tr>
+          <tr>
+            <td>🎢 アクティビティ</td>
+            <td class="amount">¥10,000〜15,000</td>
+            <td>ジャングリア1Day、美ら海水族館、体験型アクティビティ等</td>
+          </tr>
+          <tr>
+            <td><strong>💰 合計</strong></td>
+            <td class="amount"><strong>¥87,000〜152,000</strong></td>
+            <td>閑散期で9万円前後〜、記念日仕様で15万円程度</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<div class="wave-divider"></div>
+
+<!-- ===== 3. MOBILITY ===== -->
+<section class="section reveal" id="mobility">
+  <div class="sec-label">03 — Mobility</div>
+  <h2 class="sec-title">移動手段の<span class="ocean">最適解</span></h2>
+  <p class="sec-desc">本部町の隠れ家カフェや絶景スポットは細い農道や急勾配の先に点在。レンタカーが圧倒的な最適解である。</p>
+
+  <div class="transport-cards">
+    <div class="transport-card recommended reveal">
+      <div class="transport-icon">🚗</div>
+      <div>
+        <div class="transport-name">レンタカー</div>
+        <div class="transport-detail">那覇空港→ホテル 約1時間43分 ｜ 高速代 約¥1,040 + レンタル代<br>隠れ家カフェや岬へのアクセスに必須。車内のプライベート空間もカップル旅の醍醐味。夕暮れの古宇利島へ自由に向かえる機動力。</div>
+      </div>
+      <div class="transport-badge">最推奨</div>
+    </div>
+    <div class="transport-card reveal">
+      <div class="transport-icon">🚌</div>
+      <div>
+        <div class="transport-name">高速バス</div>
+        <div class="transport-detail">約2時間14分 ｜ ¥2,170<br>安価だが到着後の身動きが著しく制限。本部エリアは起伏があり徒歩・バスのみでの周遊は非現実的。</div>
+      </div>
+      <div class="transport-badge" style="background:var(--section-alt);color:var(--text-light);">適性：低</div>
+    </div>
+    <div class="transport-card reveal">
+      <div class="transport-icon">🚕</div>
+      <div>
+        <div class="transport-name">タクシー</div>
+        <div class="transport-detail">約1時間43分 ｜ 約¥25,840<br>運転疲労の排除に有効だが、都度の手配と過疎地域での配車待ちリスクあり。</div>
+      </div>
+      <div class="transport-badge" style="background:var(--section-alt);color:var(--text-light);">適性：中</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 4. JUNGLIA ===== -->
+<section class="junglia-hero" id="junglia">
+  <div class="junglia-inner">
+    <div class="sec-label" style="color:rgba(255,255,255,0.5);">04 — JUNGLIA OKINAWA</div>
+    <h2 style="font-family:'Shippori Mincho',serif; font-size:clamp(1.6rem,4vw,2.2rem); font-weight:700; margin-bottom:1rem;">ジャングリア沖縄<br>攻略メソッド</h2>
+    <p style="font-size:0.9rem; opacity:0.8; max-width:580px; margin:0 auto; line-height:1.8;">テクノロジーの活用と事前の情報収集で、効率よく・疲労を最小限に。抽選制整理券の管理と食体験の深化がカギ。</p>
+
+    <div class="junglia-tips">
+      <div class="junglia-tip reveal">
+        <h4>📱 アプリ整理券</h4>
+        <p>来場前に「JUNGLIAオフィシャルアプリ」をDL・登録必須。人気アトラクションは抽選制整理券システム。入場直後にアプリで抽選応募→当選時間枠に合わせてカフェや他施設を回る「ハブ＆スポーク型」行動が最適。</p>
+      </div>
+      <div class="junglia-tip reveal">
+        <h4>🎢 注目アトラクション</h4>
+        <p>「GRAVITY DROP」（1月24日運営開始）、新大型ライド「YAMBARU TORNADO」（4月29日開業予定、高さ約20m・直径約16m）。ウォークスルー型施設で待ち時間を有効活用。</p>
+      </div>
+      <div class="junglia-tip reveal">
+        <h4>🍽️ パーク内グルメ</h4>
+        <p>4月22日から沖縄食材の新フードメニューが展開。「WILD BANQUET」のイカ墨じゅーしー&フライングスクイッドや、「TROPICAL OASIS」のツリーサラダなど、SNS映えと味覚を両立したメニューが充実。</p>
+      </div>
+      <div class="junglia-tip reveal">
+        <h4>⏰ 時間配分のコツ</h4>
+        <p>午前中に人気アトラクションの抽選を済ませ、昼食にパーク内グルメを組み込む。夕方にはパークを切り上げホテルの温泉へ。過ごし過ぎによる疲労を防ぎ、ディナーをベストコンディションで楽しむ。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 5. MODEL COURSES ===== -->
+<section class="section-wide" id="plans">
+  <div class="section reveal">
+    <div class="sec-label">05 — Model Courses</div>
+    <h2 class="sec-title">カップル向け<span class="coral">モデルコース</span></h2>
+    <p class="sec-desc">性格や旅の目的に合わせた3つのプラン。北部エリアのポテンシャルを最大限に引き出す。</p>
+
+    <div class="plan-tabs">
+      <button class="plan-tab active" onclick="switchPlan('a')">🍽️ A：王道＆美食</button>
+      <button class="plan-tab" onclick="switchPlan('b')">🌿 B：隠れ家＆自然</button>
+      <button class="plan-tab" onclick="switchPlan('c')">📸 C：ラグジュアリー＆映え</button>
+    </div>
+
+    <!-- PLAN A -->
+    <div class="plan-content active" id="plan-a">
+      <div class="plan-header plan-a-header">
+        <div class="plan-name">プランA：王道リゾート＆美食満喫プラン</div>
+        <div class="plan-for">初めて本島北部を訪れるカップル、グルメ志向の方に。象徴的な絶景スポットを効率よく押さえつつ、沖縄固有の食材を堪能する王道構成。ホテルから半径数キロ圏内に名所が集中し、運転疲労が極めて少ない。</div>
+      </div>
+
+      <div class="day-block">
+        <div class="day-label">Day 01</div>
+        <div class="day-title">絶景ドライブとアグー豚の夕べ</div>
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-time">11:00</div>
+            <div class="tl-name">那覇空港着・レンタカー貸出</div>
+            <div class="tl-desc">手続き後、沖縄自動車道を北上。伊芸SA等で軽く休憩。</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-time">14:00</div>
+            <div class="tl-name">古宇利島ドライブ</div>
+            <div class="tl-desc">古宇利大橋でエメラルドグリーンの海上を滑走するドライブ。ビーチ散策とカフェで小腹を満たす。</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-time">16:00</div>
+            <div class="tl-name">ホテルチェックイン</div>
+            <div class="tl-desc">ウェルカムビール（オリオンビール）で乾杯。バルコニーから伊江島を眺めて長旅の疲れを癒やす。</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-time">18:30</div>
+            <div class="tl-name">ディナー：オーシャンBoo！美ら海店</div>
+            <div class="tl-desc">全席オーシャンビューで、夕暮れの海を見ながら絶品のアグー豚しゃぶしゃぶを堪能。1人約3,000〜4,000円。</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="day-block">
+        <div class="day-label">Day 02</div>
+        <div class="day-title">ジャングリア完全制覇とホテルステイ</div>
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-time">08:00</div>
+            <div class="tl-name">ホテル朝食（シリウス）</div>
+            <div class="tl-desc">沖縄料理を豊富に取り入れたビュッフェでエネルギー充填。</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-time">09:30</div>
+            <div class="tl-name">Junglia Expressで出発</div>
+            <div class="tl-desc">レンタカーは置いたまま、直通シャトルバスでパークへ。</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-time">10:00</div>
+            <div class="tl-name">ジャングリア沖縄入場</div>
+            <div class="tl-desc">優先レーンでスムーズに入園。直後にアプリでアトラクション抽選券を確保。</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-time">13:00</div>
+            <div class="tl-name">パーク内ランチ</div>
+            <div class="tl-desc">WILD BANQUETにてイカ墨じゅーしーを楽しむ。</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-time">17:00</div>
+            <div class="tl-name">ホテル帰還・ジュラ紀温泉</div>
+            <div class="tl-desc">天然温泉「美ら海の湯」（2億年前の地層から湧出）で疲労をリセット。</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-time">19:00</div>
+            <div class="tl-name">ホテル内ディナー</div>
+            <div class="tl-desc">沖縄料理「かりゆし」またはBBQ「カペラ」で食事。食後はオリオンビールバーでクラフトビール。</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="day-block">
+        <div class="day-label">Day 03</div>
+        <div class="day-title">静寂の森と水族館</div>
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-time">08:30</div>
+            <div class="tl-name">備瀬のフクギ並木散策</div>
+            <div class="tl-desc">ホテルから徒歩3分。約1km続くフクギの防風林のトンネル。木漏れ日と葉音の中を二人で散歩。</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-time">10:30</div>
+            <div class="tl-name">沖縄美ら海水族館</div>
+            <div class="tl-desc">ホテルから徒歩7分。世界最大級の水槽でジンベエザメの給餌を鑑賞。</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-time">13:00</div>
+            <div class="tl-name">絶景ランチ：ピザ喫茶 花人逢</div>
+            <div class="tl-desc">本部町の高台にある古民家風ピザ喫茶。伊江島を見下ろすパノラマビューでピザとサラダ。</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-time">15:00</div>
+            <div class="tl-name">帰路へ</div>
+            <div class="tl-desc">那覇空港へ向け南下。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PLAN B -->
+    <div class="plan-content" id="plan-b">
+      <div class="plan-header plan-b-header">
+        <div class="plan-name">プランB：洗練の隠れ家とネイチャー没入プラン</div>
+        <div class="plan-for">人混みを避け、自然の雄大さやデザイン性の高い空間を楽しみたいカップルに。今帰仁村の洗練された隠れ家レストランとダイナミックな自然景観を堪能。</div>
+      </div>
+
+      <div class="day-block">
+        <div class="day-label">Day 01</div>
+        <div class="day-title">最北の絶景と洗練のディナー</div>
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-time">11:00</div>
+            <div class="tl-name">那覇空港着・レンタカー移動</div>
+            <div class="tl-desc">本島最北エリア（国頭村）まで一気に北上。</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-time">14:00</div>
+            <div class="tl-name">辺戸岬・茅打ちバンタ</div>
+            <div class="tl-desc">最北端の岬と断崖絶壁から圧倒的なスケールの海景を目に焼き付ける穴場スポット。</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-time">16:30</div>
+            <div class="tl-name">ホテルチェックイン</div>
+            <div class="tl-desc">「ベアフットルーム」等のリラックス志向客室を選択。靴を脱いで寛ぐ。</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-time">19:00</div>
+            <div class="tl-name">記念日ディナー：珊瑚table</div>
+            <div class="tl-desc">今帰仁村の隠れ家レストラン。やんばる食材の洋食・創作料理で上質な時間を共有。</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="day-block">
+        <div class="day-label">Day 02</div>
+        <div class="day-title">ジャングリア体験とサンセットカフェ</div>
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-time">09:30</div>
+            <div class="tl-name">ジャングリア沖縄へ</div>
+            <div class="tl-desc">レンタカーで向かい、大自然テーマのアトラクションを中心に体験。</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-time">15:00</div>
+            <div class="tl-name">早めの退園・今帰仁村ドライブ</div>
+            <div class="tl-desc">混雑ピーク前に退園。農道や海岸線をドライブ。</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-time">16:30</div>
+            <div class="tl-name">カフェタイム：Awayk</div>
+            <div class="tl-desc">コンクリート打ちっぱなしのモダン空間と手付かずの海辺自然のコントラスト。</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-time">19:00</div>
+            <div class="tl-name">ディナー：まーさっさー</div>
+            <div class="tl-desc">庭園を眺めながら静かに沖縄家庭料理を堪能する居酒屋。</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="day-block">
+        <div class="day-label">Day 03</div>
+        <div class="day-title">城跡と白亜のビーチ</div>
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-time">09:30</div>
+            <div class="tl-name">今帰仁城跡</div>
+            <div class="tl-desc">世界遺産。城壁の向こうに広がる青い海は、琉球王国の歴史と自然の融合。</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-time">11:30</div>
+            <div class="tl-name">ウッパマビーチ散策</div>
+            <div class="tl-desc">手付かずの天然白砂のロングビーチ。波の音だけを聞きながら散策。</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-time">13:00</div>
+            <div class="tl-name">自然派ランチ：Cafe フクルビ</div>
+            <div class="tl-desc">沖縄の原風景を感じながらランチとスイーツ。</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-time">15:00</div>
+            <div class="tl-name">那覇空港へ</div>
+            <div class="tl-desc">名残惜しさとともに南下。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PLAN C -->
+    <div class="plan-content" id="plan-c">
+      <div class="plan-header plan-c-header">
+        <div class="plan-name">プランC：インフィニティプールと映え空間巡り</div>
+        <div class="plan-for">スケジュールに追われず、SNS映えや美しい写真を残したいカップルに。クラブウィング（全室スイート）の設備を最大限に享受し、時間に縛られない余裕の構成。</div>
+      </div>
+
+      <div class="day-block">
+        <div class="day-label">Day 01</div>
+        <div class="day-title">絶景スイーツとVIPステイの幕開け</div>
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-time">12:00</div>
+            <div class="tl-name">那覇空港着・レンタカー移動</div>
+            <div class="tl-desc">ゆっくり出発。</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-time">14:00</div>
+            <div class="tl-name">瀬底島カフェ：trip cafe okinawa</div>
+            <div class="tl-desc">瀬底大橋を渡り、洗練されたインテリアの中で映えパンケーキを楽しむ。</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-time">15:30</div>
+            <div class="tl-name">クラブウィングチェックイン</div>
+            <div class="tl-desc">専用チェックインフロー。全室スイート仕様の極上プライベート空間。</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-time">16:30</div>
+            <div class="tl-name">インフィニティプール</div>
+            <div class="tl-desc">宿泊者限定のカバナ付きプール。海とプールの水面が一体化する絶景で写真撮影。</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-time">19:30</div>
+            <div class="tl-name">ディナー：美ら海BBQるぐんちゅ</div>
+            <div class="tl-desc">全席オーシャンビューのテラスで活伊勢海老＆シーフードBBQ。</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="day-block">
+        <div class="day-label">Day 02</div>
+        <div class="day-title">ジャングリアの映えスポットとホテルラウンジ</div>
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-time">09:30</div>
+            <div class="tl-name">レイトモーニング</div>
+            <div class="tl-desc">バルコニーで海を眺めながらゆっくり朝の時間。</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-time">11:00</div>
+            <div class="tl-name">ジャングリア沖縄へ</div>
+            <div class="tl-desc">優先レーンでスマートに入場。</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-time">13:00</div>
+            <div class="tl-name">パーク内フォトセッション</div>
+            <div class="tl-desc">TROPICAL OASISでツリーサラダをオーダー。テーマパークの非日常空間で撮影タイム。</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-time">16:00</div>
+            <div class="tl-name">ホテル帰還・サンセットタイム</div>
+            <div class="tl-desc">ウェルカムビールを飲みながらバルコニーでサンセットを待つ。ディナーはルームサービスで優雅に。</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="day-block">
+        <div class="day-label">Day 03</div>
+        <div class="day-title">カラフルなアートカフェと名残惜しいビーチ</div>
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-time">10:30</div>
+            <div class="tl-name">ゆっくりチェックアウト</div>
+            <div class="tl-desc">最後の朝をスイートで満喫。</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-time">11:00</div>
+            <div class="tl-name">OKINAWA SUN</div>
+            <div class="tl-desc">パステルカラーの壁とカラフル装飾のフォトジェニックカフェ。旅の締めくくりの写真を残す。</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-time">12:30</div>
+            <div class="tl-name">亜熱帯茶屋</div>
+            <div class="tl-desc">ハンモック席＆テラス席でパノラマ海景に包まれながら、リゾートの「チル」を限界まで享受。</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-time">14:30</div>
+            <div class="tl-name">那覇空港へ</div>
+            <div class="tl-desc">名残惜しくも帰路へ。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="strat-note reveal">
+      <strong>💡 戦略的付記：</strong>旅行日程が4月25日以降の場合、いずれのプランでもDay 3午前中に本部港からフェリーで伊江島の「ゆり祭り」を組み込むことを強く推奨。100万輪の白いテッポウユリと青い海・空のコントラストは、この時期・この場所でしか体験できない圧倒的な空間。
+    </div>
+  </div>
+</section>
+
+<div class="wave-divider"></div>
+
+<!-- ===== 6. RAIN PLAN ===== -->
+<section class="section-alt-bg" id="rain">
+  <div class="section reveal">
+    <div class="sec-label">06 — Weatherproof</div>
+    <h2 class="sec-title">雨天時の<span class="ocean">代替プラン</span></h2>
+    <p class="sec-desc">突発的な雨天でもカップルの雰囲気を損なわない、全天候型の代替施設。</p>
+
+    <div class="wp-cards">
+      <div class="wp-card reveal">
+        <div class="wp-card-icon">🐋</div>
+        <h4>沖縄美ら海水族館</h4>
+        <p>ホテルから徒歩7分の至近距離。「黒潮の海」水槽のジンベエザメやマンタの群れは、悪天候を完全に忘れさせる圧倒的な没入感。徒歩アクセスで雨の影響も最小限。</p>
+      </div>
+      <div class="wp-card reveal">
+        <div class="wp-card-icon">🦁</div>
+        <h4>シーサー作り体験</h4>
+        <p>「まいまいシーサー」（水族館から車1分）でカップルで彩色体験。「琉球窯」では雨の海を眺めながら素焼きシーサー作り（¥3,400〜）や陶器体験も。形に残る思い出を。</p>
+      </div>
+      <div class="wp-card reveal">
+        <div class="wp-card-icon">🍍</div>
+        <h4>ナゴパイナップルパーク</h4>
+        <p>屋根付きカートでの園内周遊、パイナップルスイーツ試食、ワイナリーショッピングなど屋内エリアが充実。空港への往復路での立ち寄りに最適。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 7. SPOTS ===== -->
+<section class="section" id="spots">
+  <div class="reveal">
+    <div class="sec-label">07 — Selected Spots</div>
+    <h2 class="sec-title">北部エリア<span class="coral">厳選スポット</span></h2>
+    <p class="sec-desc">カップル向け・北部完結滞在・質の追求の観点から、真に相性の良い施設を厳選。</p>
+
+    <div class="spot-category">
+      <div class="spot-cat-title">🌊 A. 絶景・散策・自然</div>
+      <div class="spot-list">
+        <div class="spot-item reveal">
+          <div class="spot-stars"><div class="spot-rating">★★★★★</div></div>
+          <div>
+            <div class="spot-name">備瀬のフクギ並木</div>
+            <div class="spot-area">本部町 ｜ ホテルから徒歩3分</div>
+            <div class="spot-desc">約1kmのフクギの防風林トンネル。差し込む木漏れ日、葉擦れの音、波の音が交差する静寂な空間。朝食前の散歩コースとして最高の舞台装置。</div>
+          </div>
+        </div>
+        <div class="spot-item reveal">
+          <div class="spot-stars"><div class="spot-rating">★★★★★</div></div>
+          <div>
+            <div class="spot-name">古宇利島・古宇利大橋</div>
+            <div class="spot-area">今帰仁村</div>
+            <div class="spot-desc">北部エリアを代表するアイコン的景勝地。透明度の高い海に囲まれた島と、海の上を一直線に走るドライブ体験は旅のハイライト。</div>
+          </div>
+        </div>
+        <div class="spot-item reveal">
+          <div class="spot-stars"><div class="spot-rating">★★★★☆</div></div>
+          <div>
+            <div class="spot-name">伊江島リリーフィールド公園</div>
+            <div class="spot-area">伊江村 ｜ ※4月25日以降限定</div>
+            <div class="spot-desc">本部港からフェリー約30分。100万輪のテッポウユリが眼前に広がる、この特定の時期にこのエリアに滞在した者だけが享受できる希少性の高い絶景。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="spot-category">
+      <div class="spot-cat-title">🍽️ B. グルメ・ディナー（要予約）</div>
+      <div class="spot-list">
+        <div class="spot-item reveal">
+          <div class="spot-stars"><div class="spot-rating">★★★★★</div></div>
+          <div>
+            <div class="spot-name">レストラン 珊瑚table</div>
+            <div class="spot-area">今帰仁村</div>
+            <div class="spot-desc">住宅街に潜む隠れ家レストラン。やんばる食材を洋食・創作料理に昇華。記念日ディナーやワインを傾けながらの上質な対話に最適。</div>
+          </div>
+        </div>
+        <div class="spot-item reveal">
+          <div class="spot-stars"><div class="spot-rating">★★★★☆</div></div>
+          <div>
+            <div class="spot-name">オーシャンBoo！美ら海店</div>
+            <div class="spot-area">本部町</div>
+            <div class="spot-desc">アグー豚専門店。全席オーシャンビューで東シナ海に沈むサンセットを借景に高品質なしゃぶしゃぶを堪能。視覚と味覚の融合。</div>
+          </div>
+        </div>
+        <div class="spot-item reveal">
+          <div class="spot-stars"><div class="spot-rating">★★★★☆</div></div>
+          <div>
+            <div class="spot-name">ピザ喫茶 花人逢</div>
+            <div class="spot-area">本部町</div>
+            <div class="spot-desc">急峻な丘の上の古民家風ピザ喫茶。縁側から伊江島と海を一望するパノラマビューが最大のスパイス。沖縄の「島時間」を体現する名店。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="spot-category">
+      <div class="spot-cat-title">☕ C. カフェ・立ち寄り</div>
+      <div class="spot-list">
+        <div class="spot-item reveal">
+          <div class="spot-stars"><div class="spot-rating">★★★★★</div></div>
+          <div>
+            <div class="spot-name">Awayk</div>
+            <div class="spot-area">今帰仁村湧川</div>
+            <div class="spot-desc">コンクリート打ちっぱなしのモダン空間と手付かずの自然景観のコントラスト。都会的ミニマリズムと海辺の融合が、感度の高いカップルに強い引力を放つ。</div>
+          </div>
+        </div>
+        <div class="spot-item reveal">
+          <div class="spot-stars"><div class="spot-rating">★★★★☆</div></div>
+          <div>
+            <div class="spot-name">亜熱帯茶屋</div>
+            <div class="spot-area">本部町</div>
+            <div class="spot-desc">アジアンテイストのインテリアとハンモック席。高台からの海景を見下ろしながら完全なる「チルアウト」の時間を。</div>
+          </div>
+        </div>
+        <div class="spot-item reveal">
+          <div class="spot-stars"><div class="spot-rating">★★★☆☆</div></div>
+          <div>
+            <div class="spot-name">OKINAWA SUN</div>
+            <div class="spot-area">本部町</div>
+            <div class="spot-desc">パステルカラーとカラフル装飾のフォトジェニックカフェ。SNS映えニーズに直結するポップな空間。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== REFERENCES ===== -->
+<section class="section">
+  <button class="ref-toggle" onclick="toggleRefs()">📚 引用文献を表示</button>
+  <div class="ref-list" id="refList">
+    1. NAVITIME - 那覇空港からオリオンホテルへの移動手段<br>
+    2. STORY - ジャングリア沖縄×オフィシャルホテル特集<br>
+    3. 楽天トラベル - オリオンホテル宿泊プラン一覧<br>
+    4. オリオンホテル公式 - 優先レーンについて<br>
+    5. じゃらんnet - 宿泊者限定優先レーンについて<br>
+    6. アクティビティジャパン - 沖縄海開き日程まとめ<br>
+    7. GWナビ - GW2026カレンダー完全版<br>
+    8. PR TIMES - YAMBARU TORNADO開業日決定<br>
+    9. Okinawa Move - 伊江島ゆり祭り<br>
+    10. 伊江村公式 - 第29回伊江島ゆり祭り開催<br>
+    11. morimin.jp - カップル沖縄旅行予算<br>
+    12. ジャングリア沖縄 - 営業カレンダー<br>
+    13. JUNGLIA FAQ<br>
+    14. オリオンツアー - 沖縄旅行費用解説<br>
+    15. おきなわ物語 - 本島北部情報一覧<br>
+    16. くふうトリップ - 名護・本島北部デートスポット<br>
+    17. 食べログ - 本部半島隠れ家レストラン<br>
+    18. JTB - 本島北部カップルおすすめスポット<br>
+    19. 阪急交通社 - 沖縄本島北部観光<br>
+    20. 楽天トラベル - 沖縄観光スポット46選<br>
+    21. おきなわ物語 - インスタ映え絶景カフェ<br>
+    22. Relux Journal - 沖縄北部穴場スポット<br>
+    23. Retty - 今帰仁の人気ディナー<br>
+    24. おきぶら - レストラン珊瑚table<br>
+    25. tabiiro.jp - 本島北部おすすめ観光名所<br>
+    26. 食べログ - 本部半島 記念日サプライズ<br>
+    27. OKITIVE - 沖縄カフェ15選<br>
+    28. tingara.okinawa - 伊江島ゆり祭り<br>
+    29. 星野リゾート - 雨の沖縄屋内スポット<br>
+    30. いこーよ - 本部町 雨の日スポット<br>
+    31. JTB - 本島北部 雨の日スポット<br>
+    32. 沖縄北部.com - 雨でも楽しめるスポット17選<br>
+    33. おきなわ物語 - 雨でも楽しめる観光スポット<br>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="footer-text">いい旅を。</div>
+  <div class="footer-sub">Okinawa Northern Tourism × JUNGLIA — 2026 April Travel Design</div>
+</footer>
+
+<script>
+// Plan tabs
+function switchPlan(plan) {
+  document.querySelectorAll('.plan-content').forEach(el => el.classList.remove('active'));
+  document.querySelectorAll('.plan-tab').forEach(el => el.classList.remove('active'));
+  document.getElementById('plan-' + plan).classList.add('active');
+  event.target.classList.add('active');
+}
+
+// References toggle
+function toggleRefs() {
+  document.getElementById('refList').classList.toggle('open');
+}
+
+// Scroll reveal
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
